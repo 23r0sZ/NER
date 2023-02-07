@@ -1,5 +1,5 @@
 experiment:
-  exp_dir: F:/NLP/Project/NER/covid19
+  exp_dir: /kaggle/working/
   exp_name: resume
   seed: 42
 
