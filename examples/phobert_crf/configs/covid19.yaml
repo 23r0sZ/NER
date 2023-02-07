@@ -1,5 +1,5 @@
 experiment:
-  exp_dir: /content/drive/MyDrive/Datasets/Covid19/adaseq/covid19
+  exp_dir: F:/NLP/Project/NER/covid19
   exp_name: resume
   seed: 42
 
