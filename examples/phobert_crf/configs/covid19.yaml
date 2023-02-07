@@ -26,7 +26,7 @@ model:
   use_crf: true
 
 train:
-  max_epochs: 1
+  max_epochs: 10
   dataloader:
     batch_size_per_gpu: 16
   optimizer:
