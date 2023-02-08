@@ -14,7 +14,7 @@ dataset:
 
 preprocessor:
   type: sequence-labeling-preprocessor
-  max_length: 512
+  max_length: 256
 
 data_collator: SequenceLabelingDataCollatorWithPadding
 
@@ -28,7 +28,7 @@ model:
 train:
   max_epochs: 20
   dataloader:
-    batch_size_per_gpu: 4
+    batch_size_per_gpu: 16
   optimizer:
     type: AdamW
     lr: 5.0e-5
@@ -43,7 +43,7 @@ train:
 
 evaluation:
   dataloader:
-    batch_size_per_gpu: 128
+    batch_size_per_gpu: 16
   metrics:
     - type: ner-metric
     - type: ner-dumper
