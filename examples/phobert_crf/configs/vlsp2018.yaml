@@ -1,7 +1,7 @@
 experiment:
-  exp_dir: experiments/
+  exp_dir: /kaggle/working/
   exp_name: resume
-  seed: 42
+  seed: 0
 
 task: named-entity-recognition
 
@@ -26,7 +26,7 @@ model:
   use_crf: true
 
 train:
-  max_epochs: 20
+  max_epochs: 10
   dataloader:
     batch_size_per_gpu: 16
   optimizer:
