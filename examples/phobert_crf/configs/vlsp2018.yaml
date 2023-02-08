@@ -14,7 +14,7 @@ dataset:
 
 preprocessor:
   type: sequence-labeling-preprocessor
-  max_length: 256
+  max_length: 150
 
 data_collator: SequenceLabelingDataCollatorWithPadding
 
