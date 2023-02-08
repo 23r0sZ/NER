@@ -7,9 +7,9 @@ task: named-entity-recognition
 
 dataset:
   data_file:
-    train: '/kaggle/input/vlsp2018/train_set.txt'
-    valid: '/kaggle/input/vlsp2018/val_set.txt'
-    test: '/kaggle/input/vlsp2018/test_set.txt'
+    train: '/kaggle/input/vlsp2018/test_set.conll'
+    valid: '/kaggle/input/vlsp2018/val_set.conll'
+    test: '/kaggle/input/vlsp2018/test_set.conll'
   data_type: conll
 
 preprocessor:
