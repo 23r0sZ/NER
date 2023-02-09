@@ -7,14 +7,14 @@ task: named-entity-recognition
 
 dataset:
   data_file:
-    train: '/kaggle/input/vlsp2018/test_set.conll'
-    valid: '/kaggle/input/vlsp2018/val_set.conll'
-    test: '/kaggle/input/vlsp2018/test_set.conll'
+    train: '/kaggle/input/vlsp2018/test_set2.conll'
+    valid: '/kaggle/input/vlsp2018/val_set2.conll'
+    test: '/kaggle/input/vlsp2018/test_set2.conll'
   data_type: conll
 
 preprocessor:
   type: sequence-labeling-preprocessor
-  max_length: 150
+  max_length: 512
 
 data_collator: SequenceLabelingDataCollatorWithPadding
 
