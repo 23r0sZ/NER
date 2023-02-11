@@ -78,7 +78,7 @@ class SequenceLabelingPreprocessor(NLPPreprocessor):
                 elif i == span['start']:
                     labels[i] = 'B-' + span['type']
                 elif 'E' in tag_scheme and i == span['end'] - 1:
-                    labels[i] = 'E-' + span['type']
+                    labels[i] = 'I-' + span['type']
                 else:
                     labels[i] = 'I-' + span['type']
         return labels
