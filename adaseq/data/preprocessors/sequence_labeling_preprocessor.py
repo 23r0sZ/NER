@@ -18,7 +18,7 @@ class SequenceLabelingPreprocessor(NLPPreprocessor):
     """Preprocessor for Sequence Labeling"""
 
     def __init__(
-        self, model_dir: str, labels: List[str], tag_scheme: str = 'BIOES', **kwargs
+        self, model_dir: str, labels: List[str], tag_scheme: str = 'BIO', **kwargs
     ) -> None:
         self.tag_scheme = tag_scheme.upper()
         if not self._is_valid_tag_scheme(self.tag_scheme):
@@ -50,23 +50,23 @@ class SequenceLabelingPreprocessor(NLPPreprocessor):
         for label in labels:
             if label[0] not in 'BIOES':
                 raise ValueError(f'Unsupported label: {label}')
-            if label[0] in 'ES':
-                tag_scheme = 'BIOES'
+            if label[0] in 'BIO':
+                tag_scheme = 'BIO'
         return tag_scheme
 
     @staticmethod
-    def _gen_label_to_id_with_bio(labels: List[str], tag_scheme: str = 'BIOES') -> Dict[str, int]:
+    def _gen_label_to_id_with_bio(labels: List[str], tag_scheme: str = 'BIO') -> Dict[str, int]:
         label_to_id = {}
         if 'O' in tag_scheme:
             label_to_id['O'] = 0
         for label in labels:
-            for tag in 'BIES':
+            for tag in 'BI':
                 if tag in tag_scheme:
                     label_to_id[f'{tag}-{label}'] = len(label_to_id)
         return label_to_id
 
     @staticmethod
-    def _spans_to_bio_labels(spans: List[Dict], length: int, tag_scheme: str = 'BIOES'):
+    def _spans_to_bio_labels(spans: List[Dict], length: int, tag_scheme: str = 'BIO'):
         labels = [NON_ENTITY_LABEL] * length
         for span in spans:
             for i in range(span['start'], min(span['end'], length)):
