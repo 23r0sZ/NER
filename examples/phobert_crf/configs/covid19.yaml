@@ -26,12 +26,12 @@ model:
   use_crf: true
 
 train:
-  max_epochs: 20
+  max_epochs: 6
   dataloader:
-    batch_size_per_gpu: 16
+    batch_size_per_gpu: 1
   optimizer:
     type: AdamW
-    lr: 5.0e-5
+    lr: 2.0e-5
     param_groups:
       - regex: crf
         lr: 5.0e-1
