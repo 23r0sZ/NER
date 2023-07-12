@@ -7,9 +7,9 @@ task: named-entity-recognition
 
 dataset:
   data_file:
-    train: '/kaggle/input/covid19/train_syllable.conll'
-    valid: '/kaggle/input/covid19/dev_syllable.conll'
-    test: '/kaggle/input/covid19/test_syllable.conll'
+    train: '/kaggle/input/vimq-txt/train.txt'
+    valid: '/kaggle/input/vimq-txt/dev.txt'
+    test: '/kaggle/input/vimq-txt/test.txt'
   data_type: conll
 
 preprocessor:
@@ -21,7 +21,7 @@ data_collator: SequenceLabelingDataCollatorWithPadding
 model:
   type: sequence-labeling-model
   embedder:
-    model_name_or_path: vinai/phobert-base
+    model_name_or_path: manhtt-079/vipubmed-deberta-base
   dropout: 0.1
   use_crf: true
 
